@@ -14,6 +14,8 @@ cargo run --bin <dayXX>
 
 Here are some of the sites I'm learning Rust from:
 
-* [Rustup: How to install](https://rustup.rs/)
+* [Learn Rust](https://www.rust-lang.org/learn)
 * [The Rust Book](https://doc.rust-lang.org/stable/book/)
+* [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html)
+* [Rust stdlib docs](https://doc.rust-lang.org/std/index.html) I spent so much time here 
 * [The Cargo Book](https://doc.rust-lang.org/cargo/index.html)

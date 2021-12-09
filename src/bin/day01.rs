@@ -1,16 +1,15 @@
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+fn increases_by_window(depths: &Vec<usize>, window: usize) -> usize {
+    let fence = window + 1;
+    depths.windows(fence).filter(|x| x[window] > x[0]).count()
+}
 
 fn main() {
-    let f = File::open("inputs/day01.txt").expect("Couldn't open file");
-    let input = BufReader::new(f);
-    let depths: Vec<i32> = input
-        .lines()
-        .map(|x| x.unwrap().parse::<i32>().unwrap())
-        .collect();
-    let increase_count = depths.windows(2).filter(|x| x[1] > x[0]).count();
+    let input = aoc2021::get_inputs(1);
+    let depths = aoc2021::inputs_to_int(input);
+
+    let increase_count = increases_by_window(&depths, 1);
     dbg!(increase_count);
 
-    let three_increase_count = depths.windows(4).filter(|x| x[3] > x[0]).count();
+    let three_increase_count = increases_by_window(&depths, 3);
     dbg!(three_increase_count);
 }
