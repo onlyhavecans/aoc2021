@@ -6,32 +6,27 @@ fn bin_string_to_int(bin: String) -> isize {
 
 fn main() {
     let inputs = aoc2021::get_inputs(3);
-    let mut bin_counter: Vec<i32> = vec![0; 12];
-    let mut bin_len = 0;
-    let mut line_counter = 0;
+    let lines: Vec<String> = inputs.lines().map(|x| x.unwrap()).collect();
+    let line_len = lines.first().unwrap().len();
+    let line_count = lines.len();
+    let mut bin_counter: Vec<isize> = vec![0; line_len];
 
-    for input in inputs.lines() {
-        let input = input.unwrap();
-        let split: Vec<i32> = input
+    for input in lines {
+        let split: Vec<isize> = input
             .chars()
-            .map(|x| x.to_string().parse::<i32>().unwrap())
+            .map(|x| x.to_string().parse::<isize>().unwrap())
             .collect();
 
-        line_counter += 1;
-        if bin_len == 0 {
-            bin_len = split.len();
-        }
-
-        for i in 0..bin_len {
+        for i in 0..line_len {
             bin_counter[i] += split[i];
         }
     }
 
-    let mut gamma_vec = vec![""; bin_len];
-    let mut epsilon_vec = vec![""; bin_len];
+    let mut gamma_vec = vec![""; line_len];
+    let mut epsilon_vec = vec![""; line_len];
 
-    for i in 0..bin_len {
-        let half = line_counter / 2;
+    for i in 0..line_len {
+        let half = (line_count / 2) as isize;
         let one_bit_common = if bin_counter[i] > half { true } else { false };
 
         match one_bit_common {
