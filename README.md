@@ -19,3 +19,4 @@ Here are some of the sites I'm learning Rust from:
 * [Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html)
 * [Rust stdlib docs](https://doc.rust-lang.org/std/index.html) I spent so much time here 
 * [The Cargo Book](https://doc.rust-lang.org/cargo/index.html)
+* [Rust Design patterns](https://rust-unofficial.github.io/patterns/)
