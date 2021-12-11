@@ -1,4 +1,4 @@
-fn increases_by_window(depths: &Vec<usize>, window: usize) -> usize {
+fn increases_by_window(depths: &[usize], window: usize) -> usize {
     let fence = window + 1;
     depths.windows(fence).filter(|x| x[window] > x[0]).count()
 }

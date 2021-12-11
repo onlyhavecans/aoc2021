@@ -27,7 +27,7 @@ fn main() {
 
     for i in 0..line_len {
         let half = (line_count / 2) as isize;
-        let one_bit_common = if bin_counter[i] > half { true } else { false };
+        let one_bit_common = bin_counter[i] > half;
 
         match one_bit_common {
             true => {
